@@ -1,0 +1,14 @@
+import schedule
+import time
+from datetime import datetime
+
+def job():
+    print("Le code s'exécute maintenant !")
+
+# Planifiez l'exécution du job à 15h30 (15:30)
+schedule.every().day.at("15:30").do(job)
+
+print("En attente de l'exécution du job...")
+while True:
+    schedule.run_pending()
+    time.sleep(1)
